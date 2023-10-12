@@ -6,4 +6,4 @@ Also adds the guard ability to the list of commands
 
 Other commands such as items/equip can be modified using the srpg_core.js plugin parameters
 
-![Commands]([https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png](https://github.com/boomyville/RMMZ/blob/main/Boomy%20SRPG%20Commands/Command.png?raw=true)https://github.com/boomyville/RMMZ/blob/main/Boomy%20SRPG%20Commands/Command.png?raw=true "Command List for actor")
+![Command](https://github.com/boomyville/RMMZ/blob/main/Boomy%20SRPG%20Commands/Command.png?raw=true "Command")
