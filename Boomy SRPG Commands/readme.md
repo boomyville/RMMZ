@@ -1,4 +1,4 @@
-# Boomy SRPG Commands
+#Boomy SRPG Commands
 
 Adds the ability to change the name of the default attack skill in SRPG Gear MZ
 
