@@ -17,12 +17,32 @@
  * @type struct<ActorFrames>[]
  * @text Actor Frame Configuration
  * @desc You can add any number of poses with variable frames for any actor. If not set then maxFrame is used.
+ * 
+ * @param Class Frames
+ * @type struct<ClassFrames>[]
+ * @text Class Frame Configuration
+ * @desc You can add any number of poses with variable frames for any class (actors only). If not set then maxFrame is used.
  *
  * @param Enemy Frames
  * @type struct<EnemyFrames>[]
  * @text Enemy Frame Configuration
  * @desc You can add any number of poses with variable frames for any enemy. If not set then maxFrame is used.
+ * 
+ * @param Use Class Configuration
+ * @type boolean
+ * @default false
+ * @desc Use class or actor configuration.
  *
+ */
+/*~struct~ClassFrames:
+ * @param id
+ * @type class
+ * @default 1
+ * @desc Id of the class to add the frames
+ * @param poseFrame
+ * @type number[]
+ * @desc Number of frames per pose. Top pose will have index 0
+  *
  */
 /*~struct~ActorFrames:
  * @param id
@@ -57,8 +77,14 @@ _akeaCustom_Frames_Sprite_setBattler.call(this, battler);
     //Check if battler is enemy or actor
 if(this._battler)
             if (this._battler.isActor()) {
+                if(eval(PluginManager.parameters('Use Class Configuration'))) {
+        id = this._battler.currentClass().id;
+        this._akeaFrames = JSON.parse(JSON.parse(PluginManager.parameters('AkeaBattlerCustomFrames')["Class Frames"]).find(sheet => JSON.parse(sheet).id == id));
+        
+                } else {
         id = this._battler.actorId();
         this._akeaFrames = JSON.parse(JSON.parse(PluginManager.parameters('AkeaBattlerCustomFrames')["Actor Frames"]).find(sheet => JSON.parse(sheet).id == id));
+        }
     } else {
         id = this._battler.enemyId();
         this._akeaFrames = JSON.parse(JSON.parse(PluginManager.parameters('AkeaBattlerCustomFrames')["Enemy Frames"]).find(sheet => JSON.parse(sheet).id == id));
