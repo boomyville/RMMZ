@@ -4,7 +4,7 @@ Put towards the bottom of yoru SRPG plugins
 
 Also requires a graphic to show the direction selected
 
-![Example]([https://github.com/boomyville/RMMZ/blob/main/Boomy%20SRPG%20Commands/Command.png?raw=true "Command"](https://github.com/boomyville/RMMZ/blob/main/Boomy%20SRPG%20Direction%20Selection/example.gif?raw=true))
+![Example](https://github.com/boomyville/RMMZ/blob/main/Boomy%20SRPG%20Direction%20Selection/example.gif?raw=true)
 
 Some things to note:
 
