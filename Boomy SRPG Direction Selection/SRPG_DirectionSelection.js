@@ -68,6 +68,7 @@
     };
     //This function runs lunatic code prior to direction_selection phase but after a battle 
     Scene_Map.prototype.srpgPostBattleLunaticCode = function () {
+        console.log("LUNATIC");
         if($gameTemp.activeEvent()) {
         if ($gameSystem.EventToUnit($gameTemp.activeEvent().eventId())[1].isActor()) {
             $gamePlayer._x = $gameTemp.activeEvent().posX();
@@ -274,7 +275,7 @@
         }
     }
     //戦闘終了の処理（共通）
-    var _SRPG_BattleManager_endBattle = BattleManager.endBattle;
+    var _ender = BattleManager.endBattle;
     BattleManager.endBattle = function (result) {
         if (this._srpgBattleResultWindow) {
             this._srpgBattleResultWindow.close();
@@ -285,6 +286,8 @@
         if ($gameSystem.EventToUnit($gameTemp.activeEvent().eventId())[1] !== undefined) {
             if($gameSystem._isBattlePhase == "actor_phase") {
             $gameSystem.setSubBattlePhase('pre_direction_selection');    
+        } else {
+            _ender.call(this, result);
         }
         }
     }
