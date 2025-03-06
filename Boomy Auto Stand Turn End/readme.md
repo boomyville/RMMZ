@@ -1,4 +1,4 @@
-Run this in a <enemyTurn> event:
+Run this in a <<enemyTurn>> event:
 
 
 let enemy_list = []
